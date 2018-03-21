@@ -1,0 +1,12 @@
+{
+  "dev": {
+    "mysql": {
+      "username": "root",
+      "password": "",
+      "dbname": "gin-react"
+    },
+    "host": {
+      "port": "not set yet"
+    }
+  }
+}
