@@ -8,8 +8,8 @@ import (
 
 func main() {
 	router := gin.Default()
-	router.Use(static.Serve("/", static.LocalFile("../client", false)))
-	router.LoadHTMLGlob("../client/*.html")
+	router.Use(static.Serve("/", static.LocalFile("../client/build", false)))
+	router.LoadHTMLGlob("../client/build/*.html")
 
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", nil)
