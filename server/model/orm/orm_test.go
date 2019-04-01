@@ -4,24 +4,25 @@ import helper "./helper"
 import "testing"
 
 func TestArraytocsv(t *testing.T) {
-	var sel = helper.GetCsvFromArray([]string{"asd", "sad"});
+	var sel = helper.GetCsvFromArray([]string{"asd", "sad"})
 	println(sel)
-	if(sel != "asd,sad") {
+	if sel != "asd,sad" {
 		t.Error(sel)
 	}
 }
 
 func TestBuildselect(t *testing.T) {
 	var sel string
-	sel = helper.BuldSelect("users", []string{});
-	println(sel);
-	if(sel != "Select * from users") {
+	// TODO: create users table before testing it
+	sel = helper.BuldSelect("users", []string{})
+	println(sel)
+	if sel != "Select * from users" {
 		t.Error(sel)
 	}
 
-	sel = helper.BuldSelect("users", []string{"name as username", "id"});
-	println(sel);
-	if(sel != "Select name as username,id from users") {
+	sel = helper.BuldSelect("users", []string{"name as username", "id"})
+	println(sel)
+	if sel != "Select name as username,id from users" {
 		t.Error(sel)
 	}
 
@@ -30,6 +31,5 @@ func TestBuildselect(t *testing.T) {
 	for i := range res {
 		println(res[i])
 	}
-
 
 }
