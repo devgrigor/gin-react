@@ -1,6 +1,8 @@
 package main
 
 import "github.com/gin-gonic/gin"
+import usercontroller "./controllers/UserController"
+
 import (
 	"net/http"
 
@@ -21,6 +23,8 @@ func main() {
 			"message": "pong",
 		})
 	})
+
+	router.POST("/user", usercontroller.Post)
 
 	router.Run() // listen and serve on 0.0.0.0:8080
 }
