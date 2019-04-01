@@ -2,23 +2,24 @@ package orm
 
 import "database/sql"
 import (
-	_ "github.com/go-sql-driver/mysql"
 	"fmt"
+
+	_ "github.com/go-sql-driver/mysql"
 )
 
-
-
 func initDB() sql.DB {
+	// TODO: et db name from config file
 	db, err := sql.Open("mysql", "root@/gin-react")
 	if err != nil {
-		panic(err.Error())  // Just for example purpose. You should use proper error handling instead of panic
+		panic(err.Error()) // Just for example purpose. You should use proper error handling instead of panic
 	}
 
+	// TODO: fix returning lock value issue
 	return *db
 }
 
 // Function for running sql query
-func Run(query string) []interface{}  {
+func Run(query string) []interface{} {
 	db := initDB()
 	defer db.Close()
 

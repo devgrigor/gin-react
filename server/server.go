@@ -2,8 +2,9 @@ package main
 
 import "github.com/gin-gonic/gin"
 import (
-	"github.com/gin-contrib/static"
 	"net/http"
+
+	"github.com/gin-contrib/static"
 )
 
 func main() {
