@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { createStore } from 'redux'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
 
 class Header extends Component {
     constructor(props) {
@@ -23,8 +26,6 @@ class Header extends Component {
       }
     }
 
-
-
     render() {
       // Redux is used for data manipulation asynchronousely and to provide single source of truth
       let store = createStore(this.counter);
@@ -38,21 +39,16 @@ class Header extends Component {
       store.dispatch({ type: 'DECREMENT' })
 
       return (
-            <header className="App-header">
-          <img src={this.state.logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn More than React
-          </a>
-        </header>
-        );
+        <div>
+          <AppBar position="static">
+              <Toolbar>
+                  <Typography variant="title" color="inherit">
+                  React & Material-UI Sample Application
+                  </Typography>
+              </Toolbar>
+          </AppBar>
+        </div>
+      );
     }
 }
 
