@@ -6,9 +6,8 @@ import model "../../model"
 // User model with name and surname
 type User struct {
 	gorm.Model
-	firstName string
-	lastName  string
-	Price     uint
+	FirstName string
+	LastName  string
 }
 
 // CreateUser creates user
@@ -18,5 +17,7 @@ func CreateUser(user User) {
 	defer db.Close()
 
 	// TODO: create user based on given data and make sure that he has unique email
-	db.NewRecord(user);
+	db.NewRecord(user)
+
+	db.Create(&user)
 }
