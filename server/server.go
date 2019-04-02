@@ -24,6 +24,7 @@ func main() {
 		})
 	})
 
+	router.GET("/user", usercontroller.Get)
 	router.POST("/user", usercontroller.Post)
 
 	router.Run() // listen and serve on 0.0.0.0:8080

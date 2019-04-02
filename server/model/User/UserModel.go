@@ -18,5 +18,5 @@ func CreateUser(user User) {
 	defer db.Close()
 
 	// TODO: create user based on given data and make sure that he has unique email
-
+	db.NewRecord(user);
 }
