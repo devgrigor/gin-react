@@ -37,7 +37,7 @@ class CourseList extends Component {
     }
 
     onSearchInputChange = (event) => {
-        if(event.key != "Enter") {
+        if(event.key !== "Enter") {
             return ;
         }
         console.log("Search changed ..." + event.target.value)
